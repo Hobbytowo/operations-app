@@ -2,19 +2,44 @@
   <div class="container">
     <h1 class="title">Jaką operację chcesz wykonać?</h1>
 
-    <div class="buttons">
-      <button class="btn btn-do">Dodawanie</button>
-      <button class="btn btn-od">Odejmowanie</button>
-      <button class="btn btn-mn">Mnożenie</button>
-      <button class="btn btn-dz">Dzielenie</button>
+    <div class="radios">
+      <div class="radio-wrapper">
+        <input class="radio" type="radio" id="one" value="Dodawanie" v-model="chosenOperation">
+        <label class="label" for="one">Dodawanie</label>
+      </div>
+
+      <div class="radio-wrapper">
+        <input class="radio" type="radio" id="Odejmowanie" value="Odejmowanie" v-model="chosenOperation">
+        <label class="label" for="Odejmowanie">Odejmowanie</label>
+      </div>
+
+      <div class="radio-wrapper">
+        <input class="radio" type="radio" id="Mnożenie" value="Mnożenie" v-model="chosenOperation">
+        <label class="label" for="Mnożenie">Mnożenie</label>
+      </div>
+
+      <div class="radio-wrapper">
+        <input class="radio" type="radio" id="Dzielenie" value="Dzielenie" v-model="chosenOperation">
+        <label class="label" for="Dzielenie">Dzielenie</label>
+      </div>
     </div>
+
+    <form-component v-if="chosenOperation" :operation="chosenOperation"/>
   </div>
 </template>
 
 <script>
+import FormComponent from '@/components/form'
 
 export default {
-  name: 'app'
+  components: {
+    FormComponent
+  },
+  data () {
+    return {
+      chosenOperation: ''
+    }
+  }
 }
 </script>
 
@@ -27,35 +52,29 @@ export default {
 
   .title {
     text-align: center;
+    margin-bottom: 30px;
+    color: #d5684d;
   }
 
-  .buttons {
+  .radios {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+
+    margin-bottom: 30px;
   }
 
-  .btn {
-    padding: 0 20px;
-    margin-bottom: 30px;
-    height: 40px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border: none;
-    border-radius: 20px;
-    box-shadow: none;
-
-    font-size: 18px;
-
+  .label {
     cursor: pointer;
-    transition: background 0.2s;
+    transition: color .3s;
     outline: none;
 
     &:hover {
-      background: #d5684d;
+      color: #e0e076;
     }
+  }
+
+  .radio:checked + .label{
+    color: #e0e076;
   }
 </style>
