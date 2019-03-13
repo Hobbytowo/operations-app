@@ -32,16 +32,34 @@
       </div>
     </div>
 
-    <button class="button" @click="click">
+    <button v-if="!createOperation" class="button" @click="click">
       Stwórz działanie
     </button>
 
     <span class="error">{{ error }}</span>
+
+    <component
+      v-if="nr1 && nr2 && createOperation"
+      :is="operation"
+      :number1="nr1"
+      :number2="nr2"
+    />
   </div>
 </template>
 
 <script>
+  import Dodawanie from './dodawanie'
+  import Odejmowanie from './odejmowanie'
+  import Mnożenie from './mnozenie'
+  import Dzielenie from './dzielenie'
+
   export default {
+    components: {
+      Dodawanie,
+      Odejmowanie,
+      Mnożenie,
+      Dzielenie
+    },
     props: {
       operation: {
         type: String,
@@ -52,7 +70,8 @@
       return {
         nr1: NaN,
         nr2: NaN,
-        error: ''
+        error: '',
+        createOperation: false
       }
     },
     computed: {
@@ -62,29 +81,25 @@
             'name1': 'Składnik',
             'id1': 'skladnik1',
             'name2': 'Składnik',
-            'id2': 'skladnik2',
-            'sign': '+'
+            'id2': 'skladnik2'
           },
           'Odejmowanie': {
             'name1': 'Odjemna',
             'id1': 'odjemna',
             'name2': 'Odjemnik',
-            'id2': 'odjemnik',
-            'sign': '-'
+            'id2': 'odjemnik'
           },
           'Mnożenie': {
             'name1': 'Czynnik',
             'id1': 'czynnik1',
             'name2': 'Czynnik',
-            'id2': 'czynnik2',
-            'sign': '*'
+            'id2': 'czynnik2'
           },
           'Dzielenie': {
             'name1': 'Dzielna',
             'id1': 'dzielna',
             'name2': 'Dzielnik',
-            'id2': 'dzielnik',
-            'sign': '/'
+            'id2': 'dzielnik'
           }
         }
 
@@ -99,7 +114,7 @@
         }
 
         this.error = ''
-
+        this.createOperation = true
       }
     }
   }
@@ -115,7 +130,7 @@
 
   .inputs {
     display: flex;
-    margin-bottom: 30px;
+    margin-bottom: 70px;
   }
 
   .input-wrapper {
@@ -149,10 +164,12 @@
     border-radius: 20px;
     box-shadow: none;
 
-    font-size: 18px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
 
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background 0.2s ease-in;
     outline: none;
 
     &:hover {

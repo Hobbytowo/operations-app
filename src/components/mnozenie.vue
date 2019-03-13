@@ -6,6 +6,16 @@
 
 <script>
   export default {
+    props: {
+      number1: {
+        type: String,
+        required: true
+      },
+      number2: {
+        type: String,
+        required: true
+      }
+    }
   }
 </script>
 
