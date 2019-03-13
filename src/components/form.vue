@@ -32,9 +32,15 @@
       </div>
     </div>
 
-    <button v-if="!createOperation" class="button" @click="click">
-      Stwórz działanie
-    </button>
+    <div class="buttons">
+      <button v-if="!createOperation" class="button" @click="click">
+        Stwórz działanie
+      </button>
+
+      <button class="button button--clear" @click="clearData">
+        Wyczyść dane
+      </button>
+    </div>
 
     <span class="error">{{ error }}</span>
 
@@ -115,6 +121,10 @@
 
         this.error = ''
         this.createOperation = true
+      },
+      clearData () {
+        this.nr1 = NaN
+        this.nr2 = NaN
       }
     }
   }
@@ -130,7 +140,7 @@
 
   .inputs {
     display: flex;
-    margin-bottom: 70px;
+    margin-bottom: 30px;
   }
 
   .input-wrapper {
@@ -149,6 +159,12 @@
 
   .input::selection .label{
     color: yellow;
+  }
+
+  .buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
   }
 
   .button {
