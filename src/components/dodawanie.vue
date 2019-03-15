@@ -43,6 +43,8 @@
 </template>
 
 <script>
+  import fillArray from '.././assets/js/fillArray'
+
   export default {
     props: {
       number1: {
@@ -67,19 +69,10 @@
         return this.maxStr.length + 1
       },
       colMaxNr () {
-        return this.fillArray(this.maxStr)
+        return fillArray(this.maxStr, this.colNr)
       },
       colMinNr () {
-        return this.fillArray(this.minStr)
-      }
-    },
-    methods: {
-      fillArray (string) {
-        const arrToFill = Array.from(string.split('')).reverse()
-        const arr = new Array(this.colNr).fill().map((nr, idx) => {
-          return arrToFill[idx]
-        })
-        return arr.reverse()
+        return fillArray(this.minStr, this.colNr)
       }
     }
   }
