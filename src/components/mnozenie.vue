@@ -28,16 +28,18 @@
       </tr>
 
       <tr
-        :class="{'tr--border': idx !== 0 && idx === solutionRow - 1}"
-        v-for="(col, idx) in solutionRow"
-        :key="idx"
+        v-for="(row, rowIdx) in solutionRow"
+        :key="rowIdx"
+        :class="{'tr--border': rowIdx !== 0 && rowIdx === solutionRow - 1}"
       >
-        <td v-for="(col, idx) in colNr" :key="idx">
+        <td v-for="(col, colIdx) in colNr" :key="colIdx">
           <input
+            :class="{'input--disabled': colNr - colIdx <= rowIdx}"
             class="input input--solution"
             type="number"
             min="0"
             max="9"
+            :disabled="colNr - colIdx <= rowIdx"
           >
         </td>
       </tr>
@@ -164,6 +166,10 @@
 
     &--solution2 {
       background: #d5684d;
+    }
+
+    &--disabled {
+      background: rgba(200, 200, 200, 0.8);
     }
 
     &--top {
