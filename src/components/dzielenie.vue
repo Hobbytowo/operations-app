@@ -6,22 +6,22 @@
 
     <table class="table">
       <tbody>
-      <tr class="tr tr--border">
-        <td v-for="(col, idx) in colNr" :key="idx">
-          <input
-            class="input input--solution"
-            type="number"
-            min="0"
-            max="9"
-          >
-        </td>
-      </tr>
+        <tr class="tr tr--border">
+          <td v-for="(col, idx) in colNr" :key="idx">
+            <input
+              class="input input--solution"
+              type="number"
+              min="0"
+              max="9"
+            >
+          </td>
+        </tr>
 
-      <tr>
-        <td class="td td--nr" v-for="(nr, idx) in dividendArray" :key="idx">
-          {{ nr }}
-        </td>
-      </tr>
+        <tr>
+          <td class="td td--nr" v-for="(nr, idx) in dividendArray" :key="idx">
+            {{ nr }}
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>

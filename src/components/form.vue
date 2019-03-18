@@ -33,16 +33,24 @@
     </div>
 
     <div class="buttons">
-      <button v-if="!createOperation" class="button" @click="click">
-        Stwórz działanie
-      </button>
+      <button
+        v-if="!createOperation"
+        class="button"
+        @click="click"
+        v-text="'Stwórz działanie'"
+      />
 
-      <button class="button button--clear" @click="clearData">
-        Wyczyść dane
-      </button>
+      <button
+        class="button button--clear"
+        @click="clearData"
+        v-text="'Wyczyść dane'"
+      />
     </div>
 
-    <span class="error">{{ error }}</span>
+    <span
+      class="error"
+      v-text="error"
+    />
 
     <component
       v-if="nr1 && nr2 && createOperation"

@@ -16,15 +16,21 @@
         </tr>
 
         <tr>
-          <td class="td td--nr" v-for="(nr, idx) in colMaxNr" :key="idx">
-            {{ nr }}
-          </td>
+          <td
+            class="td td--nr"
+            v-for="(nr, idx) in colMaxNr"
+            :key="idx"
+            v-text="nr"
+          />
         </tr>
 
         <tr class="tr tr--border">
-          <td class="td td--nr" v-for="(nr, idx) in colMinNr" :key="idx">
-            {{ nr }}
-          </td>
+          <td
+            class="td td--nr"
+            v-for="(nr, idx) in colMinNr"
+            :key="idx"
+            v-text="nr"
+          />
         </tr>
 
         <tr>
