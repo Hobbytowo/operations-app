@@ -1,7 +1,8 @@
 {
   "name": "Math",
+  "description": "Application to help children with basic mathematical operations (+, -, *, /)",
+  "homepage": "https://basic-math-operations.netlify.com/",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -52,5 +53,7 @@
     "last 2 versions",
     "not ie <= 8"
   ],
-  "main": "background.js"
+  "main": "background.js",
+  "author": "Weronika Kędziora <wkedziora13@gmail.com>",
+  "license": "MIT"
 }
