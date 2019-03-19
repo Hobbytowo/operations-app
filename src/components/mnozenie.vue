@@ -112,7 +112,7 @@
   .sign {
     font-size: 35px;
     padding-right: 45px;
-    padding-top: 130px;
+    padding-top: 100px;
   }
 
   .table {
@@ -127,7 +127,7 @@
       content: '+';
       position: absolute;
       left: -60px;
-      bottom: 40px;
+      bottom: 60px;
 
       font-size: 35px;
     }

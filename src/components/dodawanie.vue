@@ -92,7 +92,7 @@
 
   .sign {
     font-size: 35px;
-    padding: 80px 40px 0 0;
+    padding: 30px 40px 0 0;
   }
 
   .table {
