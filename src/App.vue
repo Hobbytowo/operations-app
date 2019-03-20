@@ -5,22 +5,22 @@
     <div class="radios">
       <div class="radio-wrapper">
         <input class="radio" type="radio" id="one" value="Dodawanie" v-model="chosenOperation">
-        <label class="label" for="one">Dodawanie</label>
+        <label class="label" for="one">Dodawanie ( + )</label>
       </div>
 
       <div class="radio-wrapper">
         <input class="radio" type="radio" id="Odejmowanie" value="Odejmowanie" v-model="chosenOperation">
-        <label class="label" for="Odejmowanie">Odejmowanie</label>
+        <label class="label" for="Odejmowanie">Odejmowanie ( - )</label>
       </div>
 
       <div class="radio-wrapper">
         <input class="radio" type="radio" id="Mnożenie" value="Mnożenie" v-model="chosenOperation">
-        <label class="label" for="Mnożenie">Mnożenie</label>
+        <label class="label" for="Mnożenie">Mnożenie ( * )</label>
       </div>
 
       <div class="radio-wrapper">
         <input class="radio" type="radio" id="Dzielenie" value="Dzielenie" v-model="chosenOperation">
-        <label class="label" for="Dzielenie">Dzielenie</label>
+        <label class="label" for="Dzielenie">Dzielenie ( / )</label>
       </div>
     </div>
 
