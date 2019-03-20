@@ -1,11 +1,27 @@
 # Mathematical operations app
 
 ## Description
-Application to help children with basic mathematical operations (+, -, *, /).
+Application to help children with dynamically generated basic mathematical operations (+, -, *, /).
+
+## Live preview
+[Link](https://basic-math-operations.netlify.com/)
 
 ## Built with
 - [Electron](https://electronjs.org/)
 - Vue.js
+
+## Screens
+### Addition
+![Example addition operation](public/images/addition.PNG)
+
+### Subtraction
+![Example subtraction operation](public/images/subtraction.PNG)
+
+### Multiplication
+![Example multiplication operation](public/images/multiplication.PNG)
+
+### Division
+![Example division operation](public/images/division.PNG)
 
 ## Project setup
 ```
