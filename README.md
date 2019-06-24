@@ -8,7 +8,7 @@ Application to help children with dynamically generated basic mathematical opera
 
 ## Built with
 - [Electron](https://electronjs.org/)
-- Vue.js
+- [Vue.js](https://vuejs.org/)
 
 ## Screens
 ### Addition
