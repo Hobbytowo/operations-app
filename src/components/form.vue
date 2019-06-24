@@ -12,6 +12,7 @@
           class="input"
           :id="operationsData.id1"
           type="number"
+          min="0"
           v-model="nr1"
         >
       </div>
@@ -35,9 +36,9 @@
 
     <div class="buttons">
       <button
-        v-if="!createOperation"
+        v-if="!formValidated"
         class="button"
-        @click="click"
+        @click="createOperation"
         v-text="'Stwórz działanie'"
       />
 
@@ -54,7 +55,7 @@
     />
 
     <component
-      v-if="nr1 && nr2 && createOperation"
+      v-if="nr1 && nr2 && formValidated"
       :is="operation"
       :number1="nr1"
       :number2="nr2"
@@ -86,7 +87,7 @@
         nr1: NaN,
         nr2: NaN,
         error: '',
-        createOperation: false
+        formValidated: false
       }
     },
     computed: {
@@ -122,7 +123,7 @@
       }
     },
     methods: {
-      click () {
+      createOperation () {
         if (!this.nr1 || !this.nr2) {
           this.error = 'Wpisz obie liczby'
           return
@@ -133,7 +134,7 @@
           this.nr1 = NaN
           this.error = 'Liczba musi być nieujemna'
           return
-        } else if (this.nr1 < 0) {
+        } else if (this.nr2 < 0) {
           this.nr2 = NaN
           this.error = 'Liczba musi być nieujemna'
           return
@@ -141,11 +142,13 @@
         // e/o check negative nr
 
         this.error = ''
-        this.createOperation = true
+        this.formValidated = true
       },
       clearData () {
         this.nr1 = NaN
         this.nr2 = NaN
+
+        this.formValidated = false
       }
     }
   }
