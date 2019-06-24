@@ -27,6 +27,7 @@
           class="input"
           :id="operationsData.id2"
           type="number"
+          min="0"
           v-model="nr2"
         >
       </div>
@@ -126,6 +127,18 @@
           this.error = 'Wpisz obie liczby'
           return
         }
+
+        // check negative nr
+        if (this.nr1 < 0) {
+          this.nr1 = NaN
+          this.error = 'Liczba musi być nieujemna'
+          return
+        } else if (this.nr1 < 0) {
+          this.nr2 = NaN
+          this.error = 'Liczba musi być nieujemna'
+          return
+        }
+        // e/o check negative nr
 
         this.error = ''
         this.createOperation = true
