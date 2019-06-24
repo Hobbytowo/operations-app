@@ -7,7 +7,7 @@
         <tr>
           <td class="td td--top" v-for="(col, idx) in colNr" :key="idx">
             <input
-              class="inpu input--top"
+              class="input input--top"
               type="number"
               min="0"
               max="9"
