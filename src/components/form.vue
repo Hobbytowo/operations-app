@@ -151,6 +151,11 @@
   .inputs {
     display: flex;
     margin-bottom: 30px;
+
+    @media (max-width: 750px) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   .input-wrapper {
@@ -173,6 +178,8 @@
 
   .buttons {
     width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-around;
   }

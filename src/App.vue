@@ -52,7 +52,7 @@ export default {
 
   .title {
     text-align: center;
-    margin-bottom: 30px;
+    margin: 30px;
     color: #d5684d;
   }
 
@@ -60,8 +60,20 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    max-width: 900px;
 
-    margin-bottom: 30px;
+    margin: 0 auto 30px;
+
+    @media (max-width: 750px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .radio-wrapper {
+    @media (max-width: 750px) {
+      margin-bottom: 10px;
+    }
   }
 
   .label {
