@@ -12,7 +12,7 @@
     "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
-    "ajv": "^6.0.0",
+    "ajv": "^6.12.3",
     "chokidar": "^2.0.4",
     "vue": "^2.5.17"
   },
